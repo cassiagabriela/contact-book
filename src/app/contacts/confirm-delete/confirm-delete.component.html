@@ -1,0 +1,11 @@
+
+  <h1 mat-dialog-title>Apagar contato</h1>
+  <div mat-dialog-content>
+    Tem certeza que deseja apagar este contato?
+  </div>
+  <div mat-dialog-actions >
+    <button mat-button mat-dialog-close (click)="confirm(data.id)">Sim</button>
+    <button mat-button mat-dialog-close cdkFocusInitial (click)="cancel()">Não</button>
+  </div>
+
+

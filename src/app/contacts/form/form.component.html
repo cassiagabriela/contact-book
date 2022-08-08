@@ -1,0 +1,39 @@
+
+<h1 mat-dialog-title> Novo contato </h1>
+<div mat-dialog-content>
+  <form [formGroup]="contactForm">
+
+      <mat-form-field class="input-form">
+        <mat-label>Digite seu nome:</mat-label>
+        <input name="nome" type="text" matInput placeholder="Nome" formControlName="nome"  required>
+        <!-- <div *ngIf="nome.errors?.['required']">
+          Name is required.
+        </div> -->
+      </mat-form-field>
+
+      <mat-form-field class="input-form">
+        <mat-label>Digite seu telefone:</mat-label>
+        <input type="text" matInput placeholder="(63) 9 9225-8980" formControlName="telefone" mask="(00) 0 0000-0000" required>
+      </mat-form-field>
+
+      <mat-form-field class="input-form">
+        <mat-label>Digite seu e-mail:</mat-label>
+        <input type="email" matInput placeholder="nome@email.com" formControlName="email" required msgErro="Email invalido">
+      </mat-form-field>
+
+      <mat-form-field class="input-form">
+        <mat-label>Digite sua Data de Nascimento:</mat-label>
+        <input type="date" matInput placeholder="14/04/1999" formControlName="data_nascimento" required>
+      </mat-form-field>
+
+
+        <mat-label> Selecione uma imagem:</mat-label> <br>
+        <input type="file" formControlName="imagem" required>
+
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-button (click)="createContact()" [disabled]="!contactForm.valid">Salvar</button>
+</div>

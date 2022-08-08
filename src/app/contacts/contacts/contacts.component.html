@@ -1,0 +1,36 @@
+<div class="content">
+  <br>
+  <h2> Agenda contatos </h2>
+  <mat-card class="subtitulo-card">
+    <div>
+      Contatos cadastrados
+    </div>
+    <div>
+      <button mat-raised-button color="white" (click)="openForm()">Adicionar novo contato</button>
+    </div>
+  </mat-card>
+<ng-container *ngFor="let contact of listContacts">
+  <mat-card class="contact-card">
+    <div class="contact-info">
+      <img
+        class="contact-image"
+        mat-card-sm-image
+        src={{contact.imagemContato.url}}
+      />
+
+      <div>
+        <p><b>Nome: </b> {{ contact.nome }}</p>
+        <p><b>E-mail: </b> {{ contact.email }} </p>
+        <p><b>Telefone: </b> {{ contact.telefone }} </p>
+        <p><b>Data Nascimento: </b> {{ contact.data_nascimento }}</p>
+      </div>
+    </div>
+
+    <div class="div-buttons">
+      <button mat-raised-button color="primary" (click)="editContact(contact)">Editar</button>
+      <button mat-raised-button color="warn" (click)="deleteContact(contact.id)">Excluir</button>
+    </div>
+  </mat-card>
+</ng-container>
+
+
