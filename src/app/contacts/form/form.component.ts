@@ -13,6 +13,7 @@ import { ContactsService } from './../../shared/service/contacts.service';
 })
 export class FormComponent implements OnInit {
   contactForm: FormGroup;
+
   constructor(
     private fb: FormBuilder,
     private rest: ContactsService,
@@ -57,7 +58,7 @@ export class FormComponent implements OnInit {
         });
 
         //TODO: Adicionar result na listContacts na posição certa
-        // window.location.reload();
+        ///window.location.reload();
       },
       (error)=>{
           console.log(error)

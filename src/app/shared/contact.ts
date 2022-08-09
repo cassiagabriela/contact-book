@@ -3,7 +3,6 @@ export interface Imagem{
   filename: string;
   url: string;
 
-
 }
 
 export interface Contact {

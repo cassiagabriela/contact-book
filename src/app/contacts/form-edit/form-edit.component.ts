@@ -1,3 +1,4 @@
+import { Imagem } from './../../shared/contact';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
@@ -28,7 +29,7 @@ export class FormEditComponent implements OnInit {
       email: [data.email, [Validators.required, Validators.email]],
       telefone: [data.telefone, Validators.required],
       data_nascimento: [data.data_nascimento, Validators.required],
-      imagem: [data.imagemContato, Validators.required]
+      imagem: [data.Imagem, Validators.required]
     });
   }
 
@@ -43,7 +44,7 @@ export class FormEditComponent implements OnInit {
 
   editContact(): void {
     let form = new FormData();
-    
+
     form.append('nome', this.contactForm.get(['nome'])?.value)
     form.append('email',this.contactForm.get(['email'])?.value)
     form.append('telefone',this.contactForm.get(['telefone'])?.value)
@@ -63,7 +64,7 @@ export class FormEditComponent implements OnInit {
   }
   cancel(): void {
     this.dialogRef.close();
-    this.contactForm.reset();
+    window.location.reload();
   }
 
 }

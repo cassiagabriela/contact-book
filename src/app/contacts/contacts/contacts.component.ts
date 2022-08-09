@@ -62,7 +62,7 @@ export class ContactsComponent implements OnInit {
       data: {
         id: contact.id,
         nome: contact.nome,
-        email: contact.email, 
+        email: contact.email,
         telefone: contact.telefone,
         data_nascimento: contact.data_nascimento,
         imagem: contact.imagemContato
