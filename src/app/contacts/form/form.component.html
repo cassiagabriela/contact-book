@@ -6,9 +6,6 @@
       <mat-form-field class="input-form">
         <mat-label>Digite seu nome:</mat-label>
         <input name="nome" type="text" matInput placeholder="Nome" formControlName="nome"  required>
-        <!-- <div *ngIf="nome.errors?.['required']">
-          Name is required.
-        </div> -->
       </mat-form-field>
 
       <mat-form-field class="input-form">
@@ -26,9 +23,8 @@
         <input type="date" matInput placeholder="14/04/1999" formControlName="data_nascimento" required>
       </mat-form-field>
 
-
-        <mat-label> Selecione uma imagem:</mat-label> <br>
-        <input type="file" formControlName="imagem" required>
+      <mat-label> Selecione uma imagem:</mat-label> <br>
+      <input type="file" name="imagem" (change)="selectFile($event)">
 
   </form>
 </div>
@@ -37,3 +33,4 @@
   <button mat-button (click)="cancel()">Cancelar</button>
   <button mat-button (click)="createContact()" [disabled]="!contactForm.valid">Salvar</button>
 </div>
+

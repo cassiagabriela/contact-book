@@ -56,15 +56,16 @@ export class ContactsComponent implements OnInit {
     const [dia, mes, ano] = contact.data_nascimento.split('/');
         contact.data_nascimento = `${ano}-${mes}-${dia}`;
 
-        
+
     const dialogRef = this.dialog.open(FormEditComponent, {
       width: '500px',
       data: {
         id: contact.id,
         nome: contact.nome,
-        email: contact.email,
+        email: contact.email, 
         telefone: contact.telefone,
-        data_nascimento: contact.data_nascimento
+        data_nascimento: contact.data_nascimento,
+        imagem: contact.imagemContato
       },
     });
     // dialogRef.afterClosed().subscribe(() => {
